@@ -62,9 +62,11 @@ class FormValidation extends Component {
                     </div>
                     <div className="col-md-12 mt-4">
                         <select name="Gender" placeholder="Select Gender">
+                            <option value="" disabled>
+                                Please Select
+                            </option>
                             <option value="male">
                                 Male
-
                             </option>
                             <option value="female">
                                 Female
