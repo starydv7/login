@@ -5,12 +5,14 @@ class FormValidation extends Component {
   state = {
     name: "",
     email: "",
-    password: "",
+      password: "",
+    gender:""
     };
     validationSchema = yup.object().shape({
         name: yup.string().required("Please enter your name"),
         email: yup.string().required("Please enter your email").email("Please enter valid email"),
-        password: yup.string().required("Please enter your password")
+        password: yup.string().required("Please enter your password"),
+        gender:yup.string().required("Please select Gender first")
 
     })
     handleSubmit = (values) => {
@@ -64,7 +66,7 @@ class FormValidation extends Component {
             <div className="col-md-12 mt-4">
               <Field
                 Component="select"
-                name="Gender"
+                name="gender"
                 placeholder="Select Gender"
               >
                 <option value="" disabled>
