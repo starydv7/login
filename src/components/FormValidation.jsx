@@ -9,7 +9,7 @@ class FormValidation extends Component {
     
     };
     validationSchema = yup.object().shape({
-        name: yup.string().required("Please enter your name"),
+        name: yup.string().required("Please enter your name").min(2,"Too short!").max(30,"Too long"),
         email: yup.string().required("Please enter your email").email("Please enter valid email"),
         password: yup.string().required("Please enter your password")
 
