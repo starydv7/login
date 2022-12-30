@@ -11,6 +11,7 @@ class FormValidation extends Component {
         name: yup.string().required("Please enter your name"),
         email: yup.string().required("Please enter your email").email("Please enter valid email"),
         password: yup.string().required("Please enter your password")
+
     })
     handleSubmit = (values) => {
         console.log("values", values);
@@ -59,21 +60,23 @@ class FormValidation extends Component {
               <p className="text-danger">
                 <ErrorMessage name="password" />
               </p>
-                    </div>
-                    <div className="col-md-12 mt-4">
-                        <select name="Gender" placeholder="Select Gender">
-                            <option value="" disabled>
-                                Please Select
-                            </option>
-                            <option value="male">
-                                Male
-                            </option>
-                            <option value="female">
-                                Female
-                            </option>
-                        </select>
-
-                    </div>
+            </div>
+            <div className="col-md-12 mt-4">
+              <Field
+                Component="select"
+                name="Gender"
+                placeholder="Select Gender"
+              >
+                <option value="" disabled>
+                  Please Select
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </Field>
+              <p className="text-danger">
+                <ErrorMessage name="gender" />
+              </p>
+            </div>
             <button className="btn-btn-primary" type="submit">
               Submit
             </button>
