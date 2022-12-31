@@ -9,14 +9,19 @@ class FormValidation extends Component {
     
     };
     validationSchema = yup.object().shape({
-        name: yup.string().required("Please enter your name").min(2,"Too short!").max(30,"Too long"),
+       name: yup.string()
+     .min(2, 'Too Short!')
+     .max(50, 'Too Long!')
+     .required('Required'),
         email: yup.string().required("Please enter your email").email("Please enter valid email"),
         password: yup.string().required("Please enter your password")
 
     })
     handleSubmit = (values) => {
         console.log("values", values);
-        localStorage.setItem("users", "values");
+        
+      // localStorage.setItem("key", "state");
+        // localStorage.setItem("name", JSON.stringify(this.state));
     }
 
   render() {
