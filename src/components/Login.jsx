@@ -211,10 +211,10 @@ class Login extends React.Component {
             </div>
             <div className="form-group">
               <button type="submit" className="btn btn-primary mr-2">
-                Register
+                Save
               </button>
               <button type="reset" className="btn btn-secondary">
-                Reset
+                Reset Value
               </button>
             </div>
           </Form>
