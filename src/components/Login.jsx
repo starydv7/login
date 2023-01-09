@@ -14,10 +14,12 @@ class Login extends React.Component {
           password: "",
           confirmPassword: "",
           role: "",
+          gender: "",
           acceptTerms: false,
         }}
         validationSchema={Yup.object().shape({
           title: Yup.string().required("Title is required"),
+          gender: Yup.string().required("Gender is required select any"),
           firstName: Yup.string().required("First Name is required"),
           lastName: Yup.string().required("Last Name is required"),
           email: Yup.string()
@@ -108,6 +110,28 @@ class Login extends React.Component {
                 />
                 <ErrorMessage
                   name="lastName"
+                  component="div"
+                  className="invalid-feedback"
+                />
+              </div>
+              <div class="form-group col">
+                <label>Gender</label>
+                <Field
+                  name="gender"
+                  as="select"
+                  className={
+                    "form-control" +
+                    (errors.gender && touched.title ? " is-invalid" : "")
+                  }
+                >
+                  <option value=""></option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="others">Others</option>
+                  <option value="not">Prefer Not to Say</option>
+                </Field>
+                <ErrorMessage
+                  name="gender"
                   component="div"
                   className="invalid-feedback"
                 />
