@@ -81,6 +81,22 @@ class Login extends React.Component {
                 />
               </div>
               <div className="form-group col-5">
+                <label htmlFor="role">Role</label>
+                <Field
+                  name="role"
+                  type="text"
+                  className={
+                    "form-control" +
+                    (errors.role && touched.role ? " is-invalid" : "")
+                  }
+                />
+                <ErrorMessage
+                  name="role"
+                  component="div"
+                  className="invalid-feedback"
+                />
+              </div>
+              <div className="form-group col-5">
                 <label htmlFor="lastName">Last Name</label>
                 <Field
                   name="lastName"
