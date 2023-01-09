@@ -13,6 +13,7 @@ class Login extends React.Component {
           email: "",
           password: "",
           confirmPassword: "",
+          role: "",
           acceptTerms: false,
         }}
         validationSchema={Yup.object().shape({
@@ -25,6 +26,10 @@ class Login extends React.Component {
           password: Yup.string()
             .min(6, "Password must be at least 6 characters")
             .required("Password is required"),
+          role: Yup.string()
+            .min(6, "Password must be at least 6 characters")
+            .required("Role is Required"),
+
           confirmPassword: Yup.string()
             .oneOf([Yup.ref("password"), null], "Passwords must match")
             .required("Confirm Password is required"),
@@ -155,6 +160,8 @@ class Login extends React.Component {
                     : "")
                 }
               />
+              <label>Role</label>
+
               <label htmlFor="acceptTerms" className="form-check-label">
                 Accept Terms & Conditions
               </label>
