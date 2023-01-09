@@ -44,7 +44,7 @@ class Login extends React.Component {
         {({ errors, status, touched }) => (
           <Form>
             <div className="form-row">
-              <div class="form-group col">
+              <div>
                 <label>Title</label>
                 <Field
                   name="title"
@@ -66,7 +66,7 @@ class Login extends React.Component {
                   className="invalid-feedback"
                 />
               </div>
-              <div className="form-group col-5">
+              <div>
                 <label htmlFor="firstName">First Name</label>
                 <Field
                   name="firstName"
@@ -82,7 +82,7 @@ class Login extends React.Component {
                   className="invalid-feedback"
                 />
               </div>
-              <div className="form-group col-5">
+              <div>
                 <label htmlFor="role">Role</label>
                 <Field
                   name="role"
@@ -98,7 +98,7 @@ class Login extends React.Component {
                   className="invalid-feedback"
                 />
               </div>
-              <div className="form-group col-5">
+              <div>
                 <label htmlFor="lastName">Last Name</label>
                 <Field
                   name="lastName"
