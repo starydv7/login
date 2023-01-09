@@ -19,9 +19,6 @@ class FormValidation extends Component {
     })
     handleSubmit = (values) => {
         console.log("values", values);
-        
-      // localStorage.setItem("key", "state");
-        // localStorage.setItem("name", JSON.stringify(this.state));
     }
 
   render() {
@@ -68,7 +65,7 @@ class FormValidation extends Component {
                 <ErrorMessage name="password" />
               </p>
             </div>
-            {/* <div className="col-md-12 mt-4">
+            <div className="col-md-12 mt-4">
               <Field
                 Component="select"
                 name="Gender"
@@ -83,7 +80,7 @@ class FormValidation extends Component {
               <p className="text-danger">
                 <ErrorMessage name="gender" />
               </p>
-            </div> */}
+            </div>
             <button className="btn-btn-primary" type="submit">
               Submit
             </button>
