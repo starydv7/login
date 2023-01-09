@@ -200,8 +200,6 @@ class Login extends React.Component {
                     : "")
                 }
               />
-              
-
               <label htmlFor="acceptTerms" className="form-check-label">
                 Accept Terms & Conditions
               </label>
