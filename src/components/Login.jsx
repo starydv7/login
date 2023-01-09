@@ -83,22 +83,6 @@ class Login extends React.Component {
                 />
               </div>
               <div>
-                <label htmlFor="role">Role</label>
-                <Field
-                  name="role"
-                  type="text"
-                  className={
-                    "form-control" +
-                    (errors.role && touched.role ? " is-invalid" : "")
-                  }
-                />
-                <ErrorMessage
-                  name="role"
-                  component="div"
-                  className="invalid-feedback"
-                />
-              </div>
-              <div>
                 <label htmlFor="lastName">Last Name</label>
                 <Field
                   name="lastName"
@@ -114,6 +98,23 @@ class Login extends React.Component {
                   className="invalid-feedback"
                 />
               </div>
+              <div>
+                <label htmlFor="role">Role</label>
+                <Field
+                  name="role"
+                  type="text"
+                  className={
+                    "form-control" +
+                    (errors.role && touched.role ? " is-invalid" : "")
+                  }
+                />
+                <ErrorMessage
+                  name="role"
+                  component="div"
+                  className="invalid-feedback"
+                />
+              </div>
+
               <div class="form-group col">
                 <label>Gender</label>
                 <Field
