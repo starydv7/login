@@ -15,6 +15,7 @@ class Login extends React.Component {
           confirmPassword: "",
           role: "",
           gender: "",
+          dob: "",
           acceptTerms: false,
         }}
         validationSchema={Yup.object().shape({
@@ -25,12 +26,17 @@ class Login extends React.Component {
           email: Yup.string()
             .email("Email is invalid")
             .required("Email is required"),
+
           password: Yup.string()
             .min(6, "Password must be at least 6 characters")
+            .max(20, "Password must be less than 20 Character")
             .required("Password is required"),
           role: Yup.string()
-            .min(6, "Password must be at least 6 characters")
+            .min(6, "Role must be entered here")
             .required("Role is Required"),
+          dob: Yup.string()
+            .min(6, "Date of Birth must be entered here")
+            .required("Date Of Birth is Required"),
 
           confirmPassword: Yup.string()
             .oneOf([Yup.ref("password"), null], "Passwords must match")
@@ -94,6 +100,22 @@ class Login extends React.Component {
                 />
                 <ErrorMessage
                   name="lastName"
+                  component="div"
+                  className="invalid-feedback"
+                />
+              </div>
+              <div>
+                <label htmlFor="firstName">Date of Birth</label>
+                <Field
+                  name="dob"
+                  type="date"
+                  className={
+                    "form-control" +
+                    (errors.dob && touched.dob ? " is-invalid" : "")
+                  }
+                />
+                <ErrorMessage
+                  name="dob"
                   component="div"
                   className="invalid-feedback"
                 />
